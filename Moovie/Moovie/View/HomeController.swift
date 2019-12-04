@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import RxSwift
 
-class HomeController: UIViewController, Storyboarded, UITableViewDelegate, UITableViewDataSource {
+class HomeController: UIViewController, Storyboarded{
 
     weak var coordinator: SDCoordinator?
     let viewModel = HomeViewModel()
@@ -22,20 +22,13 @@ class HomeController: UIViewController, Storyboarded, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
         setupBindWithUI()
         viewModel.viewDidLoad()
     }
     
-    private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-    }
     
     private func setupBindWithUI() {
         self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
-//        self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeCell")
-
         
         viewModel.rows.asObserver()
         .subscribe(onNext: { [weak self] (value) in
@@ -48,12 +41,32 @@ class HomeController: UIViewController, Storyboarded, UITableViewDelegate, UITab
         super.didReceiveMemoryWarning()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+}
+
+extension HomeController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfRows
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 132.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Coordinator flow to next page
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,4 +75,5 @@ class HomeController: UIViewController, Storyboarded, UITableViewDelegate, UITab
         cell.configureCell(model: cellDataModel)
         return cell
     }
+
 }

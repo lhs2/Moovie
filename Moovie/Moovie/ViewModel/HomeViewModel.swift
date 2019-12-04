@@ -36,7 +36,7 @@ class HomeViewModel {
            case .success(let json):
                do {
                 let jsonData = try json.rawData(options: .fragmentsAllowed)
-                   let response = try! JSONDecoder().decode(PopularMovie.self, from: jsonData)
+                let response = try! JSONDecoder().decode(PopularMovie.self, from: jsonData)
                 self?.dataModel = response
                } catch {
                    print(error)
@@ -47,7 +47,6 @@ class HomeViewModel {
            }
        }
     }
-    
     
     private func configureTableDataSource() {
         tableDataSource = dataModel.results ?? []
@@ -60,6 +59,6 @@ class HomeViewModel {
     }
     
     func tableCellDataModelForIndexPath(_ indexPath: IndexPath) -> Movie {
-        return tableDataSource[indexPath.row]
+        return tableDataSource[indexPath.section]
     }
 }
