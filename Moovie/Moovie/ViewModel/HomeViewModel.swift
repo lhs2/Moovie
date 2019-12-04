@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomeViewModel {
     var numberOfRows = 0
+    var rows = PublishSubject<Int>()
     
     private var tableDataSource = [Movie]()
     private var dataModel: PopularMovie! {
@@ -53,6 +55,8 @@ class HomeViewModel {
     
     private func configureOutput() {
         numberOfRows = tableDataSource.count
+        rows.onNext(numberOfRows)
+        
     }
     
     func tableCellDataModelForIndexPath(_ indexPath: IndexPath) -> Movie {

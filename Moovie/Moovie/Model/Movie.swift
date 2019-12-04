@@ -24,6 +24,20 @@ struct Movie: Codable {
     var video: Bool?
     var vote_average: Double?
     
+    func getPosterPath() -> String {
+        if let posterPath = self.poster_path {
+           return "http://image.tmdb.org/t/p/w185/" + posterPath
+        }
+        return ""
+        
+    }
+    
+    func getFirstGenreId()->String {
+        if self.genre_ids != nil, let firstGenre = self.genre_ids?.first {
+            return Parse.getGenreTitleBy(id: firstGenre)
+        }
+        return "-"
+    }
+    
+
 }
-
-

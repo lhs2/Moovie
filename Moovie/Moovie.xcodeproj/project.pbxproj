@@ -21,6 +21,7 @@
 		C16513772398339C00AD4CD5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16513762398339C00AD4CD5 /* HomeViewModel.swift */; };
 		C165137B23983DCC00AD4CD5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */; };
 		C165137C23983DCC00AD4CD5 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */; };
+		C165137E239850F400AD4CD5 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137D239850F400AD4CD5 /* Parse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C16513762398339C00AD4CD5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		C165137D239850F400AD4CD5 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			children = (
 				C10BDC9F23973625002DA8A7 /* Coordinators.swift */,
 				C10BDCA3239738EC002DA8A7 /* Manager.swift */,
+				C165137D239850F400AD4CD5 /* Parse.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C10BDCA223973667002DA8A7 /* HomeController.swift in Sources */,
+				C165137E239850F400AD4CD5 /* Parse.swift in Sources */,
 				C10BDC7A239735B7002DA8A7 /* AppDelegate.swift in Sources */,
 				C16513732398007300AD4CD5 /* Movie.swift in Sources */,
 				C16513772398339C00AD4CD5 /* HomeViewModel.swift in Sources */,

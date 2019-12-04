@@ -8,15 +8,40 @@
 
 import UIKit
 import Alamofire
+import RxSwift
 
-class HomeController: UIViewController, Storyboarded {
+class HomeController: UIViewController, Storyboarded, UITableViewDelegate, UITableViewDataSource {
 
     weak var coordinator: SDCoordinator?
     let viewModel = HomeViewModel()
-        
+    private let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
+        setupBindWithUI()
         viewModel.viewDidLoad()
+    }
+    
+    private func setupTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    private func setupBindWithUI() {
+        self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+//        self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeCell")
+
+        
+        viewModel.rows.asObserver()
+        .subscribe(onNext: { [weak self] (value) in
+            self?.tableView.reloadData()
+        })
+        .disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +52,12 @@ class HomeController: UIViewController, Storyboarded {
         return viewModel.numberOfRows
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 132.0
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
         let cellDataModel = viewModel.tableCellDataModelForIndexPath(indexPath)
         cell.configureCell(model: cellDataModel)
         return cell

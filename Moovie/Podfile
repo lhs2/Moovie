@@ -9,6 +9,9 @@ target 'Moovie' do
 
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
+	pod 'Kingfisher', '~> 4.10.0'
+	pod 'RxSwift', '~> 4'
+        pod 'RxCocoa', '~> 4'
 
 
   target 'MoovieTests' do

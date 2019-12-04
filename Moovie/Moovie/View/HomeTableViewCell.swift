@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeTableViewCell: UITableViewCell {
 
@@ -29,6 +30,13 @@ class HomeTableViewCell: UITableViewCell {
         }
         
         func configureCell(model: Movie) {
+            if let movieURL = URL(string: model.getPosterPath()) {
+                let placeholderImage = #imageLiteral(resourceName: "poster_placeholder")
+                posterImage.kf.setImage(with: movieURL, placeholder: placeholderImage)
+            } else {
+                posterImage.image = #imageLiteral(resourceName: "failed_image_download")
+            }
+            
             if let vote_average = model.vote_average {
                 scoreLabel.text = "\(vote_average)"
             }
@@ -40,7 +48,8 @@ class HomeTableViewCell: UITableViewCell {
             if let title = model.title {
                 titleLabel.text = title
             }
-            genreLabel.text = ""
+            
+            genreLabel.text = model.getFirstGenreId()
             
         }
     

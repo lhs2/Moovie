@@ -17,11 +17,6 @@ class Manager {
         case failure(Error)
     }
     
-    enum CustomError: Error {
-        case parseError
-        
-    }
-    
     typealias Handler = (Result<JSON, Error>) -> Void
 
     
@@ -69,8 +64,6 @@ class Manager {
                            handler(.success(data))
                         }
                         
-                        handler(.failure(CustomError.parseError))
-
                     case .failure(let error):
                         handler(.failure(error))
 
