@@ -14,6 +14,7 @@
 		C10BDC91239735B7002DA8A7 /* MoovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDC90239735B7002DA8A7 /* MoovieTests.swift */; };
 		C10BDCA023973625002DA8A7 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDC9F23973625002DA8A7 /* Coordinators.swift */; };
 		C10BDCA223973667002DA8A7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDCA123973667002DA8A7 /* HomeController.swift */; };
+		C10BDCA4239738EC002DA8A7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDCA3239738EC002DA8A7 /* Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C10BDC92239735B7002DA8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C10BDC9F23973625002DA8A7 /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		C10BDCA123973667002DA8A7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		C10BDCA3239738EC002DA8A7 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				C10BDC9F23973625002DA8A7 /* Coordinators.swift */,
+				C10BDCA3239738EC002DA8A7 /* Manager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				C10BDCA223973667002DA8A7 /* HomeController.swift in Sources */,
 				C10BDC7A239735B7002DA8A7 /* AppDelegate.swift in Sources */,
 				C10BDCA023973625002DA8A7 /* Coordinators.swift in Sources */,
+				C10BDCA4239738EC002DA8A7 /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
