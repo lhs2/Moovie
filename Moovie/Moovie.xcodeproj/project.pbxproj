@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		C10BDCA023973625002DA8A7 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDC9F23973625002DA8A7 /* Coordinators.swift */; };
 		C10BDCA223973667002DA8A7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDCA123973667002DA8A7 /* HomeController.swift */; };
 		C10BDCA4239738EC002DA8A7 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BDCA3239738EC002DA8A7 /* Manager.swift */; };
+		C16513712397EF4700AD4CD5 /* PopularMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16513702397EF4700AD4CD5 /* PopularMovie.swift */; };
+		C16513732398007300AD4CD5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16513722398007300AD4CD5 /* Movie.swift */; };
+		C165137523982AC700AD4CD5 /* FailableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137423982AC700AD4CD5 /* FailableDecodable.swift */; };
+		C16513772398339C00AD4CD5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16513762398339C00AD4CD5 /* HomeViewModel.swift */; };
+		C165137B23983DCC00AD4CD5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */; };
+		C165137C23983DCC00AD4CD5 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,12 @@
 		C10BDC9F23973625002DA8A7 /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		C10BDCA123973667002DA8A7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		C10BDCA3239738EC002DA8A7 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		C16513702397EF4700AD4CD5 /* PopularMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovie.swift; sourceTree = "<group>"; };
+		C16513722398007300AD4CD5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C165137423982AC700AD4CD5 /* FailableDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailableDecodable.swift; sourceTree = "<group>"; };
+		C16513762398339C00AD4CD5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +72,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012EBA2DF3C051B17207B412 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C10BDC6D239735B7002DA8A7 = {
 			isa = PBXGroup;
 			children = (
 				C10BDC78239735B7002DA8A7 /* Moovie */,
 				C10BDC8F239735B7002DA8A7 /* MoovieTests */,
 				C10BDC77239735B7002DA8A7 /* Products */,
+				012EBA2DF3C051B17207B412 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				C10BDCA123973667002DA8A7 /* HomeController.swift */,
+				C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */,
+				C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +145,7 @@
 		C10BDC9D239735E3002DA8A7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C16513762398339C00AD4CD5 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -130,6 +153,9 @@
 		C10BDC9E239735E9002DA8A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C16513702397EF4700AD4CD5 /* PopularMovie.swift */,
+				C16513722398007300AD4CD5 /* Movie.swift */,
+				C165137423982AC700AD4CD5 /* FailableDecodable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,6 +243,7 @@
 			files = (
 				C10BDC86239735B7002DA8A7 /* LaunchScreen.storyboard in Resources */,
 				C10BDC83239735B7002DA8A7 /* Assets.xcassets in Resources */,
+				C165137C23983DCC00AD4CD5 /* HomeTableViewCell.xib in Resources */,
 				C10BDC81239735B7002DA8A7 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,8 +264,13 @@
 			files = (
 				C10BDCA223973667002DA8A7 /* HomeController.swift in Sources */,
 				C10BDC7A239735B7002DA8A7 /* AppDelegate.swift in Sources */,
+				C16513732398007300AD4CD5 /* Movie.swift in Sources */,
+				C16513772398339C00AD4CD5 /* HomeViewModel.swift in Sources */,
 				C10BDCA023973625002DA8A7 /* Coordinators.swift in Sources */,
+				C165137523982AC700AD4CD5 /* FailableDecodable.swift in Sources */,
+				C165137B23983DCC00AD4CD5 /* HomeTableViewCell.swift in Sources */,
 				C10BDCA4239738EC002DA8A7 /* Manager.swift in Sources */,
+				C16513712397EF4700AD4CD5 /* PopularMovie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +439,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiz.sousa.Moovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -425,7 +457,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.luiz.sousa.Moovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

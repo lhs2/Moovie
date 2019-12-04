@@ -7,16 +7,30 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeController: UIViewController, Storyboarded {
 
     weak var coordinator: SDCoordinator?
-
+    let viewModel = HomeViewModel()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeTableViewCell
+        let cellDataModel = viewModel.tableCellDataModelForIndexPath(indexPath)
+        cell.configureCell(model: cellDataModel)
+        return cell
     }
 }

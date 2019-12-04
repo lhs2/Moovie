@@ -8,6 +8,7 @@ target 'Moovie' do
   # Pods for Moovie
 
 	pod 'Alamofire'
+	pod 'SwiftyJSON'
 
 
   target 'MoovieTests' do

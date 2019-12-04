@@ -8,8 +8,22 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Manager {
+    
+    enum Result<Value, Error: Swift.Error> {
+        case success(JSON)
+        case failure(Error)
+    }
+    
+    enum CustomError: Error {
+        case parseError
+        
+    }
+    
+    typealias Handler = (Result<JSON, Error>) -> Void
+
     
     static let shared: Manager = Manager()
     
@@ -28,14 +42,14 @@ class Manager {
     
     enum Endpoint: String {
         case guestToken = "authentication/guest_session/new?api_key="
-        case popularMovies = "movie/popular?language=pt-BR&page=%@&api_key="
+        case popularMovies = "movie/popular?language=pt-BR&page=1&api_key="
     }
     
         func request(_ method          : Alamofire.HTTPMethod,
                      _ endpoint        : Endpoint,
                      _ pathParamenters : [CVarArg]?,
                      _ parameters      : [String:Any]?,
-                     handler: @escaping ((_ status: Bool, _ message: String)->Void)) {
+                     handler: @escaping Handler) {
         
         
             var requestURL = Manager.BASE_URL + endpoint.rawValue + Manager.API_KEY
@@ -45,14 +59,25 @@ class Manager {
         }
         
         let encoding: ParameterEncoding = JSONEncoding.default
-        self.manager.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
-                let popularResponse = response.flatMap { json in
-                                //try PopularMovies(json: json) 
-                }
-            }
+            self.manager.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers)
+                .validate(statusCode: 200..<299)
+                .responseJSON(completionHandler: { response in
+                    switch response.result {
+                    case .success(_):
+                        if let json = response.data {
+                           let data = try! JSON(data: json)
+                           handler(.success(data))
+                        }
+                        
+                        handler(.failure(CustomError.parseError))
+
+                    case .failure(let error):
+                        handler(.failure(error))
+
+                    }
+                })
                 
         }
 
     
 }
-
