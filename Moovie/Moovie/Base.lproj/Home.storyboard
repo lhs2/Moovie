@@ -15,20 +15,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASE PROJECT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faj-KI-5Qg">
-                                <rect key="frame" x="146.5" y="437.5" width="121" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="66c-Fs-SBj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="A6C-5y-TLc" customClass="HomeTableViewCell" customModule="Moovie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A6C-5y-TLc" id="GrQ-Jt-c5S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Gtm-sC-Sw7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9wS-29-Zc9"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="htb-Ps-Jhf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zOx-xI-bIz"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="b05-YY-z96"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="faj-KI-5Qg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a7h-Ku-4Dq"/>
-                            <constraint firstItem="faj-KI-5Qg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zT9-Fk-klA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="66c-Fs-SBj" secondAttribute="trailing" id="8vh-HD-HnJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="66c-Fs-SBj" secondAttribute="bottom" id="CWB-PW-9FM"/>
+                            <constraint firstItem="htb-Ps-Jhf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gil-nu-uqG"/>
+                            <constraint firstItem="66c-Fs-SBj" firstAttribute="top" secondItem="htb-Ps-Jhf" secondAttribute="bottom" id="Rmc-PA-7tV"/>
+                            <constraint firstItem="htb-Ps-Jhf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uvo-5Z-IDQ"/>
+                            <constraint firstItem="66c-Fs-SBj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wvn-Kl-nmp"/>
+                            <constraint firstItem="htb-Ps-Jhf" firstAttribute="centerX" secondItem="66c-Fs-SBj" secondAttribute="centerX" id="jmY-S5-LvJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="htb-Ps-Jhf" id="kUM-eP-LHT"/>
+                        <outlet property="tableView" destination="66c-Fs-SBj" id="axW-kH-Yws"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
