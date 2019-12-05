@@ -25,7 +25,7 @@ struct Movie: Codable {
     var vote_average: Double?
     
     func getPosterPath() -> String {
-        if let posterPath = self.poster_path {
+        if let posterPath = poster_path {
            return "http://image.tmdb.org/t/p/w185/" + posterPath
         }
         return ""
@@ -33,7 +33,7 @@ struct Movie: Codable {
     }
     
     func getFirstGenreId()->String {
-        if self.genre_ids != nil, let firstGenre = self.genre_ids?.first {
+        if genre_ids != nil, let firstGenre = genre_ids?.first {
             return Parse.getGenreTitleBy(id: firstGenre)
         }
         return "-"

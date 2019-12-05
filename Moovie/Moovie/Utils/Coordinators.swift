@@ -39,10 +39,10 @@ class SDCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = HomeController.instantiate()
-        vc.coordinator = self
+        let homeViewController = HomeController.instantiate()
+        homeViewController.coordinator = self
         navigationController.navigationBar.isHidden = true
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.pushViewController(homeViewController, animated: true)
     }
     
     func backToRoot() {

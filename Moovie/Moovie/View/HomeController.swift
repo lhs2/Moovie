@@ -23,22 +23,24 @@ class HomeController: UIViewController, Storyboarded{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSearchBar()
         setupBindWithUI()
         viewModel.viewDidLoad()
     }
     
-    private func setupSearchBar(){
-        
-    }
-    
     
     private func setupBindWithUI() {
-        self.tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
+        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         
         viewModel.rows.asObserver()
         .subscribe(onNext: { [weak self] (value) in
-            self?.tableView.reloadData()
+            if(value >= 0) {
+                self?.tableView.reloadData()
+            }
+            else if(value == -1) {
+                self?.alert(title: "Aviso", error: "Ocorreu um erro na conversão das informações. Tente novamente mais tarde", buttonTexts: ["OK :("])
+            }else {
+                self?.alert(title: "Aviso", error: "Ocorreu um erro ao obter informações.", buttonTexts: ["OK"])
+            }
         })
         .disposed(by: disposeBag)
     }

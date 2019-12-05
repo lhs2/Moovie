@@ -56,11 +56,12 @@ class HomeViewModel {
                 }
                 self?.dataModel = response
                } catch {
-                   print(error)
+                self?.rows.onNext(-1)
                }
                
            case .failure(let error):
                print(error.localizedDescription)
+            self?.rows.onNext(-2)
            }
        }
     }

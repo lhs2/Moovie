@@ -23,7 +23,7 @@ class Manager {
     static let shared: Manager = Manager()
     
     private init() {
-        self.manager = Alamofire.SessionManager()
+        manager = Alamofire.SessionManager()
     }
     
     static let BASE_URL = "https://api.themoviedb.org/3/"
@@ -54,7 +54,7 @@ class Manager {
         }
         
         let encoding: ParameterEncoding = JSONEncoding.default
-            self.manager.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers)
+            manager.request(requestURL, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate(statusCode: 200..<299)
                 .responseJSON(completionHandler: { response in
                     switch response.result {

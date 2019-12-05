@@ -21,10 +21,10 @@ struct PopularMovie: Codable {
     init(from decoder: Decoder) throws {
 
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.page = try container.decode(Int.self, forKey: .page)
-        self.results = try container.decodeArray(Movie.self, forKey: .results)
-        self.total_results = try container.decode(Int.self, forKey: .total_results)
-        self.total_pages = try container.decode(Int.self, forKey: .total_pages)
+        page = try container.decode(Int.self, forKey: .page)
+        results = try container.decodeArray(Movie.self, forKey: .results)
+        total_results = try container.decode(Int.self, forKey: .total_results)
+        total_pages = try container.decode(Int.self, forKey: .total_pages)
     }
     
 }
