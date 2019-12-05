@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		C165137B23983DCC00AD4CD5 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */; };
 		C165137C23983DCC00AD4CD5 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */; };
 		C165137E239850F400AD4CD5 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C165137D239850F400AD4CD5 /* Parse.swift */; };
+		C16513802398790700AD4CD5 /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C165137F2398790700AD4CD5 /* MovieDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C165137923983DCC00AD4CD5 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		C165137A23983DCC00AD4CD5 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		C165137D239850F400AD4CD5 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		C165137F2398790700AD4CD5 /* MovieDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				C10BDC82239735B7002DA8A7 /* Assets.xcassets */,
 				C10BDC84239735B7002DA8A7 /* LaunchScreen.storyboard */,
 				C10BDC87239735B7002DA8A7 /* Info.plist */,
+				C165137F2398790700AD4CD5 /* MovieDetail.storyboard */,
 			);
 			path = Moovie;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				C10BDC83239735B7002DA8A7 /* Assets.xcassets in Resources */,
 				C165137C23983DCC00AD4CD5 /* HomeTableViewCell.xib in Resources */,
 				C10BDC81239735B7002DA8A7 /* Home.storyboard in Resources */,
+				C16513802398790700AD4CD5 /* MovieDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

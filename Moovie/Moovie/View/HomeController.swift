@@ -16,14 +16,20 @@ class HomeController: UIViewController, Storyboarded{
     let viewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchBar()
         setupBindWithUI()
         viewModel.viewDidLoad()
+    }
+    
+    private func setupSearchBar(){
+        
     }
     
     
@@ -40,6 +46,10 @@ class HomeController: UIViewController, Storyboarded{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+}
+
+extension HomeController: UISearchBarDelegate {
     
 }
 
@@ -74,6 +84,12 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         let cellDataModel = viewModel.tableCellDataModelForIndexPath(indexPath)
         cell.configureCell(model: cellDataModel)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if section == viewModel.numberOfRows-1{
+            viewModel.requestPagination()
+        }
     }
 
 }

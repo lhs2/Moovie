@@ -37,7 +37,7 @@ class Manager {
     
     enum Endpoint: String {
         case guestToken = "authentication/guest_session/new?api_key="
-        case popularMovies = "movie/popular?language=pt-BR&page=1&api_key="
+        case popularMovies = "movie/popular?language=pt-BR&page=%d&api_key="
     }
     
         func request(_ method          : Alamofire.HTTPMethod,
